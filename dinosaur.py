@@ -1,4 +1,5 @@
 
+
 class Dinosaur:
 
     def __init__(self, name, attack_power):
@@ -8,3 +9,4 @@ class Dinosaur:
 
     
     def attack(self, robot):
+        robot.health -= self.attack_power
