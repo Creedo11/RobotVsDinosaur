@@ -10,5 +10,8 @@ class Robot:
 
     def attack(self, dinosaur):
         dinosaur.health -= self.active_weapon.attack_power
+        if dinosaur.health <= 0:
+            dinosaur.health = 0
+
 
 

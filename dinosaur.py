@@ -10,3 +10,5 @@ class Dinosaur:
     
     def attack(self, robot):
         robot.health -= self.attack_power
+        if robot.health <= 0:
+            robot.health = 0
