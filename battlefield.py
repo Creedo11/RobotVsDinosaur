@@ -21,31 +21,19 @@ class Battlefield:
         print("Only one side can win!")
     
     def battle_phase(self):
-        robo_player = self.robot
-        dino_player = self.dinosaur
-
-        while robo_player == self.robot and dino_player == self.dinosaur:  
+        while self.robot.health > 0 and self.dinosaur.health > 0:  
             if self.robot.health > 0:
-                self.robot.attack(dino_player)
-                dinosaur_remaining_health = self.dinosaur.health
-                print (f"Robot {self.robot.name} attacked {self.dinosaur.name} for {self.robot.active_weapon.attack_power} damage. {self.dinosaur.name} has {dinosaur_remaining_health} health remaining.")
-                print(" ")
+                self.robot.attack(self.dinosaur)
             if self.dinosaur.health > 0:
-                self.dinosaur.attack(robo_player)
-                robot_remaining_health = self.robot.health
-                print (f"Dinosaur {self.dinosaur.name} attacked {self.robot.name} for {self.dinosaur.attack_power} damage. {self.robot.name} has {robot_remaining_health} health remaining.")
-                print(" ")
-            elif dinosaur_remaining_health == 0:
-                self.winner = robo_player.name
-                break
-            elif robot_remaining_health == 0:
-                self.winner = dino_player.name
-                break
+                self.dinosaur.attack(self.robot)
 
     def display_winner(self):
-        self.winner == self.winner
-        print(f"{self.winner} has been declared the winner!" )
-        print(" ")
+        if self.dinosaur.health > 0:
+            print(f"{self.dinosaur.name} has been declared the winner!" )
+            print(" ")
+        elif self.robot.health > 0:
+            print(f"{self.robot.name} has been declared the winner!" )
+            print(" ")
         
         
 

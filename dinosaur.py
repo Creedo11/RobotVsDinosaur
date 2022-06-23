@@ -12,3 +12,5 @@ class Dinosaur:
         robot.health -= self.attack_power
         if robot.health <= 0:
             robot.health = 0
+            print (f"Dinosaur {self.name} attacked {robot.name} for {self.attack_power} damage. {robot.name} has {robot.health} health remaining.")
+            print(" ")
